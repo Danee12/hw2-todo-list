@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# To Do List 2
+이번엔 항해 99 리액트 2차 과제로 기능이 추가된 todo list를 만들었습니다.
+<br/><br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 기능
+1. 기존의 내용과 동일
+2. 각 todo에 대하여 상세 페이지 생성
+3. 상세 페이지는 각 todo의 id와 제목, 내용이 포함됨
+4. 또한 상세 페이지에서 '이전으로'라는 버튼 클릭 시 메인 페이지로 이동
+<br/><br/>
 
-## Available Scripts
+## 사용 기술
+- react
+- styled-components
+- react-redux : useDispatch, useSelector
+- react-router-dom : useNavigate, useParams, Link
+- uuid
+<br/><br/>
 
-In the project directory, you can run:
+## 변경 사항
+1. 기존에는 나만의 디자인으로 만들었지만 이번에는 예시 페이지와 최대한 동일하게 만드려고 노력했습니다.
+2. 이번에 새로 배운 styled-components를 최대한 사용했습니다.
+3. Router와 Redux를 적용했습니다.
+4. 코드 리뷰 시 받았던 피드백을 최대한 적용하려 했습니다.
+	- title, content 하나의 state로 묶기
+	- Working와 Done의 컴포넌트 일체화
+	- id 생성 함수
+<br/><br/>
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 아쉬운 점 및 향후 개선 사항
+1. styled components 끼리 따로 파일을 만들기
+2. 공통 css 적용
+3. 입력 날짜를 저장하여 표출
+4. 자신이 진행한 todo에 대한 피드백

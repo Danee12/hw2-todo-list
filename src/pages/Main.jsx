@@ -11,6 +11,7 @@ function Main() {
   const [todoObj, setTodoObj] = useState({ title: '', content: '' })
   const { title, content } = todoObj;
 
+  // onChange에 들어갈 Input setState 함수
   const onChangeInput = (changeObj) => {
     const { name, value } = changeObj.target;
 
@@ -47,7 +48,7 @@ function Main() {
   const todoListBox = (todo) => {
     return (
       <StTodoList key={todo.id}>
-        <Link>상세보기</Link>
+        <Link to={`/detail/${todo.id}`}>상세보기</Link>
         <div>
           <h3 style={{ fontSize: '25px' }}>{todo.title}</h3>
           <p>{todo.content}</p>

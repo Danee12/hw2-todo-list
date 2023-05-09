@@ -10,6 +10,7 @@ const createId = () => {
 const ADD_TODO = 'todoReducer/ADD_TODO'
 const DELETE_TODO = 'todoReducer/DELETE_TODO'
 const CHANGE_DONE_TODO = 'todoReducer/CHANGE_DONE_TODO'
+const FIND_TODO = `todoReducer/FIND_TODO`
 
 // action creater
 export const addTodo = (payload) => {
@@ -33,6 +34,13 @@ export const changeDoneTodo = (payload) => {
     }
 }
 
+export const findTodo = (payload) => {
+    return {
+        type: FIND_TODO,
+        payload
+    }
+}
+
 // 초기값 세팅
 const initialState = {
     todos: [
@@ -42,7 +50,8 @@ const initialState = {
             content: '리액트를 배워봅시다.',
             idDone: false
         }
-    ]
+    ],
+    todo : []
 }
 
 // Reducer
@@ -50,13 +59,16 @@ const todoReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TODO:
             const newTodo = { ...action.payload, id: createId(), idDone: false }
-            return { todos: [...state.todos, newTodo] };
+            return { todos: [...state.todos, newTodo], todo:state.todo};
         case DELETE_TODO:
             const deleteTodo = state.todos.filter((todo) => todo.id !== action.payload)
-            return { todos: deleteTodo };
+            return { todos: deleteTodo, todo:state.todo };
         case CHANGE_DONE_TODO:
             const changeTodo = state.todos.map(todo => todo.id === action.payload ? { ...todo, isDone: !todo.isDone } : todo)
-            return { todos: changeTodo };
+            return { todos: changeTodo, todo:state.todo };
+        case FIND_TODO:
+            const findTodo = state.todos.find(todo => todo.id === action.payload)
+            return {todos: state.todos, todo:findTodo};
         default:
             return state;
     }
